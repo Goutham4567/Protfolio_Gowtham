@@ -6,21 +6,21 @@ const Education = () => {
       degree: "B.Tech in Electronic Communication Engineering",
       institution: "Lovely Professional University, Punjab",
       duration: "2025-2028",
-      percentage: "82%",
-      description: "Currently pursuing Bachelor of Technology in Electronic Communication Engineering"
+      percentage: "Currently 2nd Year",
+      description: "Currently pursuing Bachelor of Technology in Electronic Communication Engineering (2nd Year)"
     },
     {
       degree: "Diploma in Electronic Communication Engineering",
       institution: "Nuzvidu Polytechnic",
       duration: "2022-2025",
-      percentage: "79%",
+      percentage: "82%",
       description: "Completed Diploma in Electronic Communication Engineering with focus on practical applications"
     },
     {
       degree: "Secondary School Certificate (SSC)",
       institution: "Vignam Vihar E.M School",
       duration: "2021-2022",
-      percentage: "N/A",
+      percentage: "79%",
       description: "Completed secondary education with strong foundation in core subjects"
     }
   ];
@@ -54,7 +54,9 @@ const Education = () => {
                   </div>
                   {education.percentage !== "N/A" && (
                     <div className="text-center">
-                      <div className="text-sm text-slate-500 dark:text-slate-400">Percentage</div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400">
+                        {education.percentage.includes("Currently") ? "Status" : "Percentage"}
+                      </div>
                       <div className="text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                         {education.percentage}
                       </div>
