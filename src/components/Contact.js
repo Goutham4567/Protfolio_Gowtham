@@ -23,10 +23,17 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    emailjs.sendForm(
+    // Create template parameters for EmailJS
+    const templateParams = {
+      user_name: formData.name,
+      user_email: formData.email,
+      message: formData.message
+    };
+
+    emailjs.send(
       'Goutham@28', // Service ID
       'template_oo0vqri', // Template ID
-      formRef.current,
+      templateParams,
       'dMDyERTarIxgRPXQV' // Public Key
     )
       .then((result) => {
@@ -246,7 +253,7 @@ Best regards,
                 <input
                   type="text"
                   id="name"
-                  name="user_name"
+                  name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -261,7 +268,7 @@ Best regards,
                 <input
                   type="email"
                   id="email"
-                  name="user_email"
+                  name="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
