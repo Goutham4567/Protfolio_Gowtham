@@ -191,6 +191,8 @@ Best regards,
                   onLoad={() => console.log('Your profile photo loaded successfully!')}
                   onError={(e) => {
                     console.error('Your profile photo failed to load:', e.target.src);
+                    // Fallback to a placeholder image
+                    e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face';
                   }}
                 />
                 {/* Subtle gradient overlay */}
